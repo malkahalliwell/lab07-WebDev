@@ -25,6 +25,7 @@
                 
                 // YOU FILL IN HERE
                 // Convert fahrenheit into degrees celsius and store it in celsius
+                celsius = (fahrenheit - 32) * 5/9;
                 
                 document.getElementById("celsiusAnswer").innerHTML = celsius + "&nbsp;Degrees";
             }
@@ -54,6 +55,13 @@
                 // Report back to the user by filling in whether
                 // the guess is too high, too low, or correct
                 // in the variable report.
+                if (userGuess < answer) {
+                    report = "Too low!";
+                } else if (userGuess > answer) {
+                    report = "Too high!";
+                } else {
+                    report = "Correct! The answer was " + answer + ".";
+                }
                 
                 document.getElementById("guessResponse").innerHTML = report;
             }
@@ -85,6 +93,13 @@
                 // add a row by using tableHTML += "<tr>";
                 // and a cell using tableHTML += "<td>";
                 // remember to also close all of your tags
+                for (let i = 1; i <= tableMax; i++) {
+                    tableHTML += "<tr>";
+                    for (let j = 1; j <= tableMax; j++) {
+                        tableHTML += "<td>" + (i * j) + "</td>";
+                    }
+                    tableHTML += "</tr>";
+                }
                                 
                 tableHTML += "</table>";
                 
